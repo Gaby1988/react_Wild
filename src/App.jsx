@@ -1,4 +1,5 @@
 import './App.css'
+import PropTypes from "prop-types";
 // import MyTitle from './components/MyTitle';
 import PokemonCard from './components/PokemonCard';
 
@@ -22,6 +23,15 @@ const pokemonList = [
     name: "mew",
   },
 ];
+
+pokemonList.propTypes = {
+    pokemonList: PropTypes.arrayOf(
+        PropTypes.shape({
+            name:PropTypes.string.isRequired,
+            imgSrc:PropTypes.string,
+        }).isRequired
+    ).isRequired
+}
 
 
 export default App;
