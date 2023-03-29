@@ -12,9 +12,9 @@ function App() {
 
   
   return (
-    <div>
-      <PokemonCard list={pokemonList} index={pokemonIndex} />
-      <NavBar setIndex={setPokemonIndex} pIndex={pokemonIndex} list={pokemonList}/>
+    <div className='tourne'>
+      <NavBar setPokemonIndex={setPokemonIndex} pokemonList={pokemonList}/>
+      <PokemonCard pokemonList={pokemonList} pokemonIndex={pokemonIndex} />
     </div>
   );
 }
