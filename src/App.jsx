@@ -1,6 +1,6 @@
 import './App.css'
 import PropTypes from "prop-types";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // import MyTitle from './components/MyTitle';
 import PokemonCard from './components/PokemonCard';
 import NavBar from './components/NavBar';
@@ -10,11 +10,15 @@ import NavBar from './components/NavBar';
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
+useEffect(() => {
+  alert("hello pokemon trainer :)")
+}, []);
+
   
   return (
-    <div>
-      <PokemonCard list={pokemonList} index={pokemonIndex} />
-      <NavBar setIndex={setPokemonIndex} pIndex={pokemonIndex} list={pokemonList}/>
+    <div className='tourne'>
+      <NavBar setPokemonIndex={setPokemonIndex} pokemonList={pokemonList}/>
+      <PokemonCard pokemonList={pokemonList} pokemonIndex={pokemonIndex} />
     </div>
   );
 }
@@ -56,3 +60,6 @@ pokemonList:PropTypes.shape({
 
 
 export default App;
+
+
+
